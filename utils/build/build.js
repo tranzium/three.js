@@ -46,6 +46,10 @@ function main() {
 
 		for ( var j = 0; j < files.length; j ++ ){
 
+			if (buffer.indexOf('// File:' + files[ j ]) > -1) {
+				continue; // File already appended
+			}
+
 			var file = '../../' + files[ j ];
 			
 			buffer.push('// File:' + files[ j ]);
